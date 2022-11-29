@@ -1,0 +1,89 @@
+.navigation-bar {
+ 
+     .container {
+        display: grid;
+        padding-top: 10px; 
+        padding-bottom: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "logo navigationicons"
+                            "navigationlinks navigationlinks";
+    }
+
+    .logotype {
+        grid-area: logo;
+        font-size: 30px;
+        font-weight: $font-weight-bold;
+        color: $color-theme-dark-2;
+        text-decoration: none;
+    }    
+
+    .navigation-links {
+        grid-area: navigationlinks;
+        display: none;
+        overflow: hidden;
+        height: 100%;
+        
+        .navigation-link {
+            margin: 15px 15px;
+            font-size: 13px;
+            color: $color-theme-dark-2;
+            text-decoration: none;
+            font-weight: $font-weight-medium;
+
+            &:hover {
+                color: $color-theme;
+            }
+        }
+
+        .active  {
+            color: $color-theme;
+        }
+    }
+
+
+    .icons {
+        grid-area: navigationicons ;
+        display: flex; 
+        justify-content: flex-end;
+        align-items: center;
+
+        
+        .icon {
+            position: relative;
+            padding: 10px;
+            margin-left: 20px;
+            height: 35px;
+        }
+
+        .active {
+            color: $color-white;
+            background-color: $color-theme-dark-1;
+            box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-component {
+            padding: 10px;
+            margin-left: 20px;
+            height: 35px;
+        }
+    }
+}  
+
+@media (min-width: 1200px) {
+    .navigation-bar .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "logo navigationlinks navigationicons";
+    padding-top: 20px; 
+    padding-bottom: 20px;
+
+        .navigation-links {
+            grid-area: navigationlinks;
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            font-weight: $font-weight-medium;
+        }
+    }
+}

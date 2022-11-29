@@ -1,0 +1,36 @@
+.breadcrumb {
+    padding-top: 100px;
+    margin-bottom: 15px;
+
+    .container {
+        max-width: 900px;
+    }
+
+    .breadcrumb-list {
+        list-style: none;
+        font-size: 13px;
+        color: $color-theme;
+        font-weight: var(--font-weight-medium);
+        
+        li {
+            display: inline-block;
+            font-weight: $font-weight-medium;
+            
+
+            a {
+                text-decoration: none;
+                color: $color-theme-dark-2;
+
+                &:hover {
+                    color: $color-theme;
+                }
+            }
+
+            & + li:before {
+                content: "\00a0>\00a0";
+                color: $color-theme-dark-2;
+                font-weight: $font-weight-regular;
+            }
+        }       
+    }
+}

@@ -1,0 +1,115 @@
+.product-grid {
+    padding-top: 80px;
+    margin-bottom: 30px;
+    
+
+    .container {
+        display: block;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 15px;
+        font-weight: $font-weight-bold;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        border: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: -30px;
+       
+        .card-img {
+            display: grid;
+            background-color: $color-gray-1;
+            position: relative;
+            border-radius: 0;
+
+            img {
+                width: 100%;
+                height: 160px;
+                object-fit: cover;
+            }
+            
+            .card-menu {
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                display: block;
+
+                .btn-light { 
+                    padding: 6px;
+                    margin: 5px;
+                    font-size: 12px;
+                }
+            }
+    
+            .btn-card-theme {
+                position: absolute;
+                bottom: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 40px;
+                font-size: 11px;
+                font-weight: $font-weight-regular;
+            }
+        }
+
+        .card-body {
+            text-align: center;
+
+            .card-category {
+                font-size: 10.5px; 
+                font-weight: $font-weight-medium;
+                color: $color-gray-5;
+                margin: -5px;
+                margin-bottom: 5px;
+            }
+
+            .card-title {
+                font-size: 13px; 
+                font-weight: $font-weight-semi-bold;
+            }
+
+            .card-rating {
+                color: $color-theme;
+                font-size: 12px;
+                margin-bottom: 3px;
+            }
+
+            .card-price {
+                font-size: 14px; //18px; 
+                font-weight: $font-weight-semi-bold;
+            }
+        }
+
+        &:hover {
+            .card-menu {
+                display: block !important;
+                // margin-top: -7px;
+
+                .btn-light {
+                    padding: 6px;
+                    margin: 5px;
+                    font-size: 12px;
+                }
+
+            }
+            .btn-card-theme {
+                display: flex !important;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .product-grid {    
+        .container {
+            max-width: 800px;
+        }
+    }
+}

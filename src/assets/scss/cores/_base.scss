@@ -1,0 +1,24 @@
+
+html, body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: $font-poppins;
+    font-weight: $font-weight-regular;
+    color: $color-theme-dark-1;
+    }
+    
+    a {
+        color: $color-theme-dark-2;
+
+        &:hover{
+            color: $color-theme;
+        }
+    }
+    
+   
+
+    @media (min-width: 1600px) {
+        .container {
+            max-width: $max-width;
+        }
+    }

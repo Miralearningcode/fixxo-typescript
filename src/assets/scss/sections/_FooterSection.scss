@@ -1,0 +1,22 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-gray-0;
+    border-top: 2px solid $color-gray-3; 
+
+    .social-media-icons {
+        padding-top: 15px;
+
+        a {
+            padding: 5px;
+        }
+    }
+    
+    p {
+        margin-top: 15px;
+        font-size: 13px;
+        color: $color-gray-5;
+    }
+}

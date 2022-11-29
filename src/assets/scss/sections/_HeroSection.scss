@@ -1,0 +1,40 @@
+.hero-section {
+    background-color: $color-gray-2;
+    background: linear-gradient(90deg, rgba(230,230,230,1) 7%, rgba(245,245,245,1) 85%); 
+
+    .container {
+        display: flex;
+        justify-content: space-around; 
+        margin-top: -100px;
+        padding-top: 100px;
+
+        .hero-image-left img {
+            width: 500px;
+            margin-left: -100px;
+        }
+
+        .hero-body {
+            text-align: center; 
+            margin-top: 180px;
+
+            h1 {
+                font-weight: $font-weight-extra-bold;
+                font-size: 3rem;
+            }
+
+            p {
+                margin-top: 20px;
+            }
+
+            .btn-theme {
+                width: 150px;
+            }
+
+        }
+
+        .hero-image-right img {
+            width: 500px;
+            margin-right: -110px;
+        }
+    }
+}
