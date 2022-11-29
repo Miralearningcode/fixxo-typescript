@@ -1,8 +1,7 @@
-import React from 'react'
 import FooterSection from '../sections/FooterSection'
 import NavigationBarSection from '../sections/NavigationBarSection'
 
-const CompareView = () => {
+const WishListView = () => {
   return (
     <>
       <NavigationBarSection />
@@ -11,4 +10,4 @@ const CompareView = () => {
   )
 }
 
-export default CompareView
+export default WishListView

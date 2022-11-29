@@ -1,16 +1,13 @@
-import React from 'react'
 import FooterSection from '../sections/FooterSection'
 import NavigationBarSection from '../sections/NavigationBarSection'
-import BreadcrumbSection from '../sections/BreadcrumbSection'
 
-const CategoriesView = () => {
+const ShoppingCartView = () => {
   return (
     <>
       <NavigationBarSection />
-      <BreadcrumbSection currentPage= "Categories" />
       <FooterSection />
     </>
   )
 }
 
-export default CategoriesView
+export default ShoppingCartView

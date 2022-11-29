@@ -13,7 +13,7 @@ import ShoppingCartView from './views/ShoppingCartView';
 import NotFoundView from './views/NotFoundView';
 import FooterSection from './sections/FooterSection';
 import NavigationBarSection from './sections/NavigationBarSection';
-import { ProductProvider } from './contexts/ProductContext'
+import ProductProvider from './contexts/ProductContext'
 import { ShoppingCartProvider } from './contexts/ShoppingCartContext'
 
 function App() {

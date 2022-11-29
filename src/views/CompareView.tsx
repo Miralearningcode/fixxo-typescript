@@ -1,8 +1,7 @@
-import React from 'react'
 import FooterSection from '../sections/FooterSection'
 import NavigationBarSection from '../sections/NavigationBarSection'
 
-const ShoppingCartView = () => {
+const CompareView = () => {
   return (
     <>
       <NavigationBarSection />
@@ -11,4 +10,4 @@ const ShoppingCartView = () => {
   )
 }
 
-export default ShoppingCartView
+export default CompareView

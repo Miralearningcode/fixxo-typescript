@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import FooterSection from '../sections/FooterSection'
 import NavigationBarSection from '../sections/NavigationBarSection'
 import ProductGridSection from '../sections/ProductGridSection'
@@ -8,17 +8,20 @@ import FlashSaleLeftSection from '../sections/FlashSaleLeftSection'
 import FlashSaleRightSection from '../sections/FlashSaleRightSection'
 import AboutUsSection from '../sections/AboutUsSection'
 import { useProductContext } from '../contexts/ProductContext'
+import { ProductContextProps } from '../models/ProductContextModel'
 
 
-const HomeView = () => {
-  const {featuredProducts, getFeaturedProducts} = useProductContext()
-  const {flashsaleProducts, getFlashsaleProducts} = useProductContext()
-  window.top.document.title = 'Fixxo.'
+const HomeView: React.FC = () => {
+  const {featuredProducts, getFeaturedProducts} = useProductContext() as ProductContextProps
+  const {flashsaleProducts, getFlashsaleProducts} = useProductContext() as ProductContextProps
+  // window.top.document.title = 'Fixxo.'
 
   useEffect(() => {
-    getFeaturedProducts(8)
-    getFlashsaleProducts(4)
+    getFeaturedProducts(8) 
+    getFlashsaleProducts(4) 
   }, [])
+
+  
 
 
   return (
@@ -27,8 +30,8 @@ const HomeView = () => {
       <HeroSection />
       <ProductGridSection title="Featured Products" items={featuredProducts}/>
       <BannerSection />
-      <FlashSaleLeftSection items={flashsaleProducts}/>
-      <FlashSaleRightSection items={flashsaleProducts}/>
+      <FlashSaleLeftSection title="" items={flashsaleProducts}/>
+      <FlashSaleRightSection title=""  items={flashsaleProducts}/>
       <AboutUsSection />
       <FooterSection />
     </>

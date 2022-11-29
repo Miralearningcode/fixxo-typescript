@@ -1,14 +1,15 @@
-import React from 'react'
 import FooterSection from '../sections/FooterSection'
 import NavigationBarSection from '../sections/NavigationBarSection'
+import BreadcrumbSection from '../sections/BreadcrumbSection'
 
-const WishListView = () => {
+const CategoriesView = () => {
   return (
     <>
       <NavigationBarSection />
+      <BreadcrumbSection currentPage= "Categories" />
       <FooterSection />
     </>
   )
 }
 
-export default WishListView
+export default CategoriesView

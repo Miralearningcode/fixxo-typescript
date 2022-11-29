@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 interface BreadcrumbProps {
   currentPage: string
+  parentPage?: string
 }
 
 const BreadcrumbSection: React.FC<BreadcrumbProps> = ({currentPage}) => {

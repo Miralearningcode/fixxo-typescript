@@ -4,10 +4,11 @@ import NavigationBarSection from '../sections/NavigationBarSection'
 import ProductGridSection from '../sections/ProductGridSection'
 import { useProductContext } from '../contexts/ProductContext'
 import BreadcrumbSection from '../sections/BreadcrumbSection'
+import { ProductContextProps } from '../models/ProductContextModel'
 
-const ProductsView = () => {
-  const {products, getProducts} = useProductContext()
-  window.top.document.title = 'Products | Fixxo.'
+const ProductsView: React.FC = () => {
+  const {products, getProducts} = useProductContext() as ProductContextProps
+  // window.top.document.title = 'Products | Fixxo.'
   
   useEffect(() => {
     getProducts()
