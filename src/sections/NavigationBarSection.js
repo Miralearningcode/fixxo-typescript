@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import IconComponent from '../components/IconComponent'
-import { useShoppingCart } from '../contexts/ShoppingCartContext'
+import { useShoppingCartContext, ShoppingCartContextProps } from '../contexts/ShoppingCartContext'
 
 const NavigationBarSection = () => {
     const [showMenu, setShowMenu] = useState(false) 
-    const { cartQuantity } = useShoppingCart()  
+    const { cartQuantity } = useShoppingCartContext() 
 
     const toggleMenu = () => {
         setShowMenu(!showMenu) //! = motsatsen till värdet
     }
 
+    
 
   return (
     <nav className="navigation-bar">

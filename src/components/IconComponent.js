@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
+
+
 const IconComponent = ({link, icon, quantity, hideOnMobile}) => {
 
   return (

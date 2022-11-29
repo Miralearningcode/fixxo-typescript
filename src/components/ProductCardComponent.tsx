@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { currencyFormatter } from '../utilities/currencyFormatter'
-import { useShoppingCart} from '../contexts/ShoppingCartContext'
+import { useShoppingCartContext, ShoppingCartContextProps } from '../contexts/ShoppingCartContext'
 import { ProductItem } from '../models/ProductModels'
 
 interface ProductCardComponentProps {
@@ -9,7 +9,7 @@ interface ProductCardComponentProps {
 }
 
 const ProductCardComponent: React.FC<ProductCardComponentProps> = ({product}) => { //Hans har item
-    const { incrementQuantity } = useShoppingCart()
+    const { incrementQuantity } = useShoppingCartContext() as ShoppingCartContextProps
 
   return (
     <div className="col">
@@ -19,7 +19,7 @@ const ProductCardComponent: React.FC<ProductCardComponentProps> = ({product}) =>
                 <div className="card-menu d-xl-none">
                     <button className="btn btn-light btn-sm"><i className="fa-light fa-heart"></i></button>
                     <button className="btn btn-light btn-sm"><i className="fa-light fa-code-compare"></i></button>
-                    <button onClick={() => incrementQuantity({articleNumber: product.articleNumber, product: product})} className="btn btn-light btn-sm"><i className="fa-light fa-bag-shopping"></i></button>
+                    <button onClick={() => incrementQuantity({articleNumber: product.articleNumber, product: product, quantity: 1})} className="btn btn-light btn-sm"><i className="fa-light fa-bag-shopping"></i></button>
                 </div>
                 <NavLink to={`/products/${product.name.toLowerCase().replace(/ /gi, "-")}`} className="btn-theme btn-card-theme d-xl-none">
                     <span className="btn-theme-left-border"></span>
