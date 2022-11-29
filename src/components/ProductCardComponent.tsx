@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { currencyFormatter } from '../utilities/currencyFormatter'
-import { useShoppingCart } from '../contexts/ShoppingCartContext'
+import { useShoppingCart} from '../contexts/ShoppingCartContext'
 import { ProductItem } from '../models/ProductModels'
 
 interface ProductCardComponentProps {

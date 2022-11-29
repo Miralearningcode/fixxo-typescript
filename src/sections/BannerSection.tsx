@@ -1,4 +1,3 @@
-import React from 'react'
 import PamelaReif from '../assets/images/pamela-reif.svg'
 import ConsciousBanner from '../assets/images/lets-be-conscious.svg'
 

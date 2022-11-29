@@ -1,9 +1,15 @@
 import React from 'react'
 import { currencyFormatter } from '../utilities/currencyFormatter'
-import { useShoppingCart } from '../contexts/ShoppingCartContext'
+import { ShoppingCartContextProps, useShoppingCartContext } from '../contexts/ShoppingCartContext'
+import { CartItem } from '../models/CartModels'
 
-const ShoppingCartItem = ({item}) => {
-  const { incrementQuantity, decrementQuantity, removeItem } = useShoppingCart()
+interface ShoppingCartItemProps {
+  item: CartItem
+}
+
+
+const ShoppingCartItem: React.FC<ShoppingCartItemProps> = ({item}) => {
+  const { incrementQuantity, decrementQuantity, removeItem } = useShoppingCartContext() as ShoppingCartContextProps
 
   return (
     <div className ="shoppingcart-item">

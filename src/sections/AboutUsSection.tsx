@@ -1,4 +1,3 @@
-import React from 'react'
 import CustomerSupport from '../assets/images/customer-support-icon.png'
 import SecuredPayment from '../assets/images/secured-payment-icon.png'
 import FreeDelivery from '../assets/images/free-delivery-icon.png'

@@ -3,11 +3,10 @@ import { createContext } from "react"
 import { ProductContextProps } from "../models/ProductContextModel"
 import { ProductItem } from "../models/ProductModels"
 
+
 interface ProductProviderProps{
     children: any
 }
-
-
 
 
 export const ProductContext = createContext<ProductContextProps | null>(null)
