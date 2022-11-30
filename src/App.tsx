@@ -15,30 +15,34 @@ import FooterSection from './sections/FooterSection';
 import NavigationBarSection from './sections/NavigationBarSection';
 import ProductProvider from './contexts/ProductContext'
 import { ShoppingCartProvider } from './contexts/ShoppingCartContext'
-// import UserProvider from './contexts/ManageProductContexts';
-// import ManageProductsView from './views/ManageProductsView';
+import ManageProductsView from './views/ManageProductsView';
+import ManageProductsProvider from './contexts/ManageProductsContext';
+
+
+
+
 
 function App() {
   return (
     <BrowserRouter>
-    <ShoppingCartProvider>
-      <ProductProvider>
-       {/* <UserProvider> */}
-          <Routes>
-            <Route path="/" element={<HomeView />} />
-            <Route path="/categories" element={<CategoriesView />} />
-            <Route path="/products" element={<ProductsView />} />
-            <Route path="/products/:name" element={<ProductDetailsView />} /> //Hans har :id istället för :name
-            <Route path="/contacts" element={<ContactsView />} />
-            <Route path="/search" element={<SearchView />} />
-            <Route path="/compare" element={<CompareView />} />
-            <Route path="/wishlist" element={<WishListView />} />
-            <Route path="/shoppingcart" element={<ShoppingCartView />} />
-            {/* <Route path="/manageproducts" element={<ManageProductsView />} /> */}
-            <Route path="*" element={<NotFoundView />} />
-          </Routes>
-        {/* </UserProvider> */}
-      </ProductProvider>
+      <ShoppingCartProvider>
+        <ProductProvider>
+          <ManageProductsProvider> 
+            <Routes>
+              <Route path="/" element={<HomeView />} />
+              <Route path="/categories" element={<CategoriesView />} />
+              <Route path="/products" element={<ProductsView />} />
+              <Route path="/products/:name" element={<ProductDetailsView />} /> //Hans har :id istället för :name
+              <Route path="/contacts" element={<ContactsView />} />
+              <Route path="/search" element={<SearchView />} />
+              <Route path="/compare" element={<CompareView />} />
+              <Route path="/wishlist" element={<WishListView />} />
+              <Route path="/shoppingcart" element={<ShoppingCartView />} />
+              <Route path="/manageproducts" element={<ManageProductsView />} /> */
+              <Route path="*" element={<NotFoundView />} />
+            </Routes>
+          </ManageProductsProvider> 
+        </ProductProvider>
       </ShoppingCartProvider>
     </BrowserRouter>
     
