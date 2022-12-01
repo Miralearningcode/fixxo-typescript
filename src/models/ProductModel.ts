@@ -1,6 +1,7 @@
 export interface Product { // hämta produkt  User
     //UserModel börjar med id: number
-    articleNumber: number
+    id: number
+    articleNumber: string
     name: string
     description?: string   //ha description?: string   ?
     category: string
@@ -10,7 +11,7 @@ export interface Product { // hämta produkt  User
 }
 
 export interface ProductRequest{ // skapa produkt  UserRequest
-    articleNumber: number
+    articleNumber: string
     name: string
     description?: string   
     category: string

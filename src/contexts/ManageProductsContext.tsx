@@ -9,10 +9,10 @@ export interface IManageProductsContext { //IuserContext
     setProductRequest: React.Dispatch<React.SetStateAction<ProductRequest>> // setUserRequest: React.Dispatch<React.SetStateAction<UserRequest>> 
     products: Product[]   //users: User[]
     create: (e: React.FormEvent) => void //create: (e: React.FormEvent) => void
-    get: (articleNumber: number) => void //get: (id: number) => void
+    get: (id: number) => void //get: (id: number) => void
     getAll: () => void //getAll: () => void
-    update: (articleNumber: number, e: React.FormEvent) => void //update: (id: number, e: React.FormEvent) => void
-    remove: (articleNumber: number) => void //delete: (id: number) => void
+    update: (e: React.FormEvent) => void //update: (id: number, e: React.FormEvent) => void
+    remove: (id: number) => void //delete: (id: number) => void
 } 
 
 
@@ -20,9 +20,9 @@ export const ManageProductsContext= createContext<IManageProductsContext | null>
 export const useManageProductsContext = () => { return useContext(ManageProductsContext)}
 
 const ManageProductsProvider = ({children} : ManageProductsProviderProps) => {  //UserProvider  UserProviderProps
-    const baseUrl = 'http://localhost:5000/api/manageproducts' //'http://localhost:5000/api/users'
-    const defaultProductValues: Product = { articleNumber: 0, name: '', description: '', category: '', price: 0, rating: 0, imageName: '' }
-    const defaultProductRequestValues: Product = { articleNumber: 0, name: '', description: '', category: '', price: 0, rating: 0, imageName: '' }
+    const baseUrl = 'http://localhost:5000/api/products' //'http://localhost:5000/api/users'
+    const defaultProductValues: Product = { id: 0, articleNumber: '', name: '', description: '', category: '', price: 0, rating: 0, imageName: '' }
+    const defaultProductRequestValues: ProductRequest = { articleNumber: '', name: '', description: '', category: '', price: 0, rating: 0, imageName: '' }
 
 
     const [product, setProduct] = useState<Product>(defaultProductValues) //[user, setUser] (user_default)
@@ -41,12 +41,16 @@ const ManageProductsProvider = ({children} : ManageProductsProviderProps) => {  
             body: JSON.stringify(productRequest)
         })
 
-        if (result.status === 201) //201 är lika med created //om vi lyckas skapa en produkt....
-            setProductRequest(defaultProductRequestValues)  //...så rensas formuläret 
+        if (result.status === 201) {  //201 är lika med created //om vi lyckas skapa en produkt....
+            setProductRequest(defaultProductRequestValues) //...så rensas formuläret
+        } else {
+            console.log('error')
+        }
+              
 
     }
-    const get = async (articleNumber: number) => {
-        const result = await fetch(`${baseUrl}/${articleNumber}`)
+    const get = async (id: number) => {
+        const result = await fetch(`${baseUrl}/${id}`)
         if (result.status === 200)
             setProduct(await result.json())
 
@@ -56,10 +60,10 @@ const ManageProductsProvider = ({children} : ManageProductsProviderProps) => {  
         if (result.status === 200)
             setProducts(await result.json())
     }
-    const update = async (articleNumber: number, e: React.FormEvent) => {
+    const update = async (e: React.FormEvent) => {
         e.preventDefault()
 
-        const result = await fetch(`${baseUrl}/${articleNumber}`, {
+        const result = await fetch(`${baseUrl}/${product.id}`, {
             method: 'put',
             headers: {
                 'Content-type': 'application/json'
@@ -71,8 +75,8 @@ const ManageProductsProvider = ({children} : ManageProductsProviderProps) => {  
             setProduct(await result.json())
              
     }
-    const remove = async (articleNumber: number) => {
-        const result = await fetch(`${baseUrl}/${articleNumber}`, {
+    const remove = async (id: number) => {
+        const result = await fetch(`${baseUrl}/${id}`, {
             method: 'delete'
         })
 
