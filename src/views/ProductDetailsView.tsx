@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useProductContext } from '../contexts/ProductContext'
+import { useProductContext } from '../contexts/ProductContext' //kolla
 import { ProductContextProps } from '../models/ProductContextModel'
 import BreadcrumbSection from '../sections/BreadcrumbSection'
 import FooterSection from '../sections/FooterSection'
