@@ -13,12 +13,14 @@ import { ProductContextProps } from '../models/ProductContextModel'
 
 const HomeView: React.FC = () => {
   const {featuredProducts, getFeaturedProducts} = useProductContext() as ProductContextProps
-  const {flashsaleProducts, getFlashsaleProducts} = useProductContext() as ProductContextProps
+  const {flashsaleProductsLeft, getFlashsaleProductsLeft} = useProductContext() as ProductContextProps
+  const {flashsaleProductsRight, getFlashsaleProductsRight} = useProductContext() as ProductContextProps
   // window.top.document.title = 'Fixxo.'
 
   useEffect(() => {
     getFeaturedProducts(8) 
-    getFlashsaleProducts(4) 
+    getFlashsaleProductsLeft(4) 
+    getFlashsaleProductsRight(4) 
   }, [])
 
   
@@ -30,8 +32,8 @@ const HomeView: React.FC = () => {
       <HeroSection />
       <ProductGridSection title="Featured Products" items={featuredProducts}/>
       <BannerSection />
-      <FlashSaleLeftSection title="" items={flashsaleProducts}/>
-      <FlashSaleRightSection title=""  items={flashsaleProducts}/>
+      <FlashSaleLeftSection title="" items={flashsaleProductsLeft}/>
+      <FlashSaleRightSection title=""  items={flashsaleProductsRight}/>
       <AboutUsSection />
       <FooterSection />
     </>
