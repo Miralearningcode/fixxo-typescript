@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useProductContext } from '../contexts/ProductContext' //kolla
+import { useProductContext } from '../contexts/ProductContext'
 import { ProductContextProps } from '../models/ProductContextModel'
 import BreadcrumbSection from '../sections/BreadcrumbSection'
 import FooterSection from '../sections/FooterSection'
@@ -9,21 +9,21 @@ import ProductDetails from '../sections/ProductDetails'
 
 const ProductDetailsView: React.FC = () => {
   const {id} = useParams<string>()   
-  const {product, getProduct} = useProductContext() as ProductContextProps
+  const productContext = useProductContext() as ProductContextProps
 
   useEffect (() => {
-    getProduct(id)
+    productContext.getProduct(id)
   }, [])
 
   return (
     <>
-        <NavigationBarSection />
-        <BreadcrumbSection parentPage="Products" currentPage={product.name} />
-        <div className="container mt-5"> 
-            <h1>{product.name}</h1>
-        </div>
-        <ProductDetails item={product} />
-        <FooterSection />
+      <NavigationBarSection />
+      <BreadcrumbSection parentPage="Products" currentPage={productContext.product.name} />
+      <div className="container mt-5"> 
+          <h1>{productContext.product.name}</h1>
+      </div>
+      <ProductDetails item={productContext.product} />
+      <FooterSection />
     </>
   )
 }

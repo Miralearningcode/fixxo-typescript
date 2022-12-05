@@ -38,6 +38,7 @@ function App() {
               <Route path="/compare" element={<CompareView />} />
               <Route path="/wishlist" element={<WishListView />} />
               <Route path="/shoppingcart" element={<ShoppingCartView />} />
+              <Route path="/productdetails" element={<ProductDetailsView />} />
               <Route path="/manageproducts" element={<ManageProductsView />} /> */
               <Route path="*" element={<NotFoundView />} />
             </Routes>

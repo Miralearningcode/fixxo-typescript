@@ -13,7 +13,7 @@ export const ProductContext = createContext<ProductContextProps | null>(null)
 export const useProductContext = () => { return useContext(ProductContext)}
 
 const ProductProvider: React.FC<ProductProviderProps> = ({children}) => {
-    const baseUrl:string = 'https://win22-webapi.azurewebsites.net/api/products'
+    const baseUrl:string = 'http://localhost:5000/api/products'
     const empty_product_values: ProductItem = { articleNumber: '', name: '', category: '', price: 0, imageName: ''}
 
     const [product, setProduct] = useState<ProductItem>(empty_product_values)
@@ -21,14 +21,14 @@ const ProductProvider: React.FC<ProductProviderProps> = ({children}) => {
     const [featuredProducts, setFeaturedProducts] = useState<ProductItem[]>([])
     const [flashsaleProducts, setFlashsaleProducts] = useState<ProductItem[]>([])
     
-    const getProduct = async (articleNumber?: string) => {
+    const getProduct = async (articleNumber?: string) => {    //get
         if (articleNumber !== undefined) {
             const res = await fetch (baseUrl + `/${articleNumber}`)
             setProduct(await res.json())
         }   
     }
 
-    const getProducts = async (take: number = 0) => {
+    const getProducts = async (take: number = 0) => {   //getAll
         let url = baseUrl
 
         if (take !== 0)
