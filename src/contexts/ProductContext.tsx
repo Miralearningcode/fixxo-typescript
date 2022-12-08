@@ -3,6 +3,12 @@ import { createContext } from "react"
 import { ProductContextProps } from "../models/ProductContextModel"
 import { ProductItem } from "../models/ProductModels"
 
+const getData = async () => {
+    const result = await fetch ('http://localhost:5000/api/products')
+    const data = await result.json()
+}
+
+getData()
 
 interface ProductProviderProps{
     children: any
@@ -24,7 +30,7 @@ const ProductProvider: React.FC<ProductProviderProps> = ({children}) => {
     
     const getProduct = async (articleNumber?: string) => {    //get Hämtar en specifik produkt
         if (articleNumber !== undefined) {
-            const res = await fetch (`${baseUrl}/product/${articleNumber}`)
+            const res = await fetch (`${baseUrl}/details/product/${articleNumber}`)  //Fetch & Await är det enda som har med api:et att göra
             setProduct(await res.json())
         }   
     }
