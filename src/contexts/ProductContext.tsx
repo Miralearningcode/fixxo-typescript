@@ -71,20 +71,6 @@ const ProductProvider: React.FC<ProductProviderProps> = ({children}) => {
     }
 
 
-    // const getFlashsaleProducts = async (take: number = 0) => {
-    //     let url = baseUrl + `?tag=flashsale`
-
-    //     if (take !== 0)
-    //         url += `&take=${take}`
-
-    //     const res = await fetch(url)
-    //     setFlashsaleProducts(await res.json())
-    // }
-
-
-
-
-
     return <ProductContext.Provider value={{product, products, featuredProducts, flashsaleProductsLeft, flashsaleProductsRight, getProduct, getProducts, getFeaturedProducts, getFlashsaleProductsLeft, getFlashsaleProductsRight}}>
         {children}
     </ProductContext.Provider>
