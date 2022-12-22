@@ -22,7 +22,6 @@ const ProductCardComponent: React.FC<ProductCardComponentProps> = ({product}) =>
                     <button onClick={() => incrementQuantity({articleNumber: product.articleNumber, product: product, quantity: 1})} className="btn btn-light btn-sm"><i className="fa-light fa-bag-shopping"></i></button>
                 </div>
                 <NavLink to={`/products/${product.articleNumber}`} className="btn-theme btn-card-theme d-xl-none">  
-                {/* innan stod det: <NavLink to={`/products/${product.name.toLowerCase().replace(/ /gi, "-")}`} className="btn-theme btn-card-theme d-xl-none"> */}
                     <span className="btn-theme-left-border"></span>
                     QUICK VIEW
                     <span className="btn-theme-right-border"></span>

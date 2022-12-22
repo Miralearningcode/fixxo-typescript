@@ -2,7 +2,7 @@ export const validateText = (elementName: string, value: string, minLength:numbe
     if (value.length == 0)
         return `${elementName} is required`
     else if (value.length < minLength)
-        return `${elementName} must contain av minimum of ${minLength} characters`  //Här kan jag lägga in Regex om ja hinner
+        return `${elementName} must contain av minimum of ${minLength} characters`  
     else    
         return ''
 }

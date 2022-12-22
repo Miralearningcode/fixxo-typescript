@@ -1,4 +1,3 @@
-// import './App.css'; Denna har Hans
 import './style.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomeView from './views/HomeView';

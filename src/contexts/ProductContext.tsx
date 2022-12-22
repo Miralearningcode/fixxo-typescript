@@ -28,14 +28,14 @@ const ProductProvider: React.FC<ProductProviderProps> = ({children}) => {
     const [flashsaleProductsLeft, setFlashsaleProductsLeft] = useState<ProductItem[]>([])
     const [flashsaleProductsRight, setFlashsaleProductsRight] = useState<ProductItem[]>([])
     
-    const getProduct = async (articleNumber?: string) => {    //get Hämtar en specifik produkt
+    const getProduct = async (articleNumber?: string) => {    
         if (articleNumber !== undefined) {
-            const res = await fetch (`${baseUrl}/details/product/${articleNumber}`)  //Fetch & Await är det enda som har med api:et att göra
+            const res = await fetch (`${baseUrl}/details/product/${articleNumber}`)  
             setProduct(await res.json())
         }   
     }
 
-    const getProducts = async () => {   //getAll Hämtar alla produkter
+    const getProducts = async () => {   
         const res = await fetch(baseUrl)
         setProducts(await res.json())
     }

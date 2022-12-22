@@ -11,7 +11,6 @@ interface ShoppingCartProviderProps {
 export interface ShoppingCartContextProps {
     cartItems: CartItem[]
     cartQuantity: number
-    //Här kan man lägga in  totalPrice: number om man behöver
     incrementQuantity: (cartItem: CartItem) => void
     decrementQuantity: (cartItem: CartItem) => void
     removeItem: (articleNumber: string) => void

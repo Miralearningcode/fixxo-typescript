@@ -8,7 +8,7 @@ const NavigationBarSection = () => {
     const { cartQuantity } = useShoppingCartContext() 
 
     const toggleMenu = () => {
-        setShowMenu(!showMenu) //! = motsatsen till värdet
+        setShowMenu(!showMenu) 
     }
 
     
